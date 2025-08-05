@@ -1,0 +1,141 @@
+/* Alert Modal Overlay */
+.alert-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 20px;
+  backdrop-filter: blur(2px);
+}
+
+/* Alert Modal */
+.alert-modal {
+  background: white;
+  border-radius: 12px;
+  min-width: 400px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  animation: alertModalSlideIn 0.2s ease-out;
+  overflow: hidden;
+}
+
+@keyframes alertModalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Alert Modal Types */
+.alert-info {
+  border-top: 4px solid var(--secondary-color);
+}
+
+.alert-success {
+  border-top: 4px solid var(--success-color);
+}
+
+.alert-warning {
+  border-top: 4px solid var(--warning-color);
+}
+
+.alert-error {
+  border-top: 4px solid var(--danger-color);
+}
+
+.alert-danger {
+  border-top: 4px solid var(--danger-color);
+}
+
+/* Alert Modal Header */
+.alert-modal-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 2rem 1rem 2rem;
+}
+
+.alert-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.alert-title {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  flex: 1;
+}
+
+/* Alert Modal Body */
+.alert-modal-body {
+  padding: 0 2rem 1.5rem 2rem;
+}
+
+.alert-message {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Alert Modal Footer */
+.alert-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1.5rem 2rem 2rem 2rem;
+  background-color: var(--bg-tertiary);
+  border-top: 1px solid var(--border-light);
+}
+
+.alert-modal-footer .btn {
+  min-width: 100px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .alert-modal {
+    min-width: 320px;
+    margin: 0 10px;
+  }
+  
+  .alert-modal-header {
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+  }
+  
+  .alert-modal-body {
+    padding: 0 1.5rem 1rem 1.5rem;
+  }
+  
+  .alert-modal-footer {
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+    flex-direction: column;
+  }
+  
+  .alert-modal-footer .btn {
+    width: 100%;
+  }
+  
+  .alert-title {
+    font-size: 1.125rem;
+  }
+  
+  .alert-icon {
+    font-size: 1.75rem;
+  }
+}
